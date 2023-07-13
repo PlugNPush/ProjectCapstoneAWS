@@ -50,8 +50,6 @@ This part is to make sure you are able to evaluate and apply some policy constra
 
 ## Policies evaluation
 
-Please evaluate below IAM policies
-
 ```json
 {
   "Version": "2012-10-17",
@@ -75,6 +73,9 @@ Please evaluate below IAM policies
 ```
 
 ### Question: What actions are allowed for EC2 instances and S3 objects based on this policy? What specific resources are included?
+
+Actions allowed for EC2 instances are to run and terminate an instance, and S3 objects are to get and put an object.
+The specific resources of EC2 is the instance itself from us-east-1 region and the specific resources of S3 is the bucket example-bucket and all its objects.
 
 ```json
 {
