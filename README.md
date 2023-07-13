@@ -9,7 +9,7 @@ Vincent MARGUET + Logan LE LAY + Michaël NASS
 Table of Contents
 
 1.  [AWS Deploymnet](#deploy)
-2.  [Quizz](#project)
+2.  [Quizz](#quizz)
 3.  [IAM](#iam)
 4.  [AWS QuickSight](#sight)
 
