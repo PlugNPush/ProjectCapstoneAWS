@@ -10,10 +10,8 @@ Table of Contents
 
 1.  [AWS Deploymnet](#deploy)
 2.  [Quizz](#project)
-3.  [Introducing the Example Social Research Organization](#intro)
-4.  [Solution requirements](#requirements)
-5.  [Project deliverables](#deliverables)
-6.  [Assets for completing the project](#assets)
+3.  [IAM](#iam)
+4.  [AWS QuickSight](#sight)
 
 ---
 
@@ -44,6 +42,7 @@ For the Network Quizz:
 3.png: **Option 1,3,6**
 4.png: **Option 4**
 
+<div id='iam'/>
 # IAM
 
 This part is to make sure you are able to evaluate and apply some policy constraintes.
@@ -197,6 +196,7 @@ Please evaluate below IAM policies
 - How would the policy restrict the access granted to you by this additional statement?
 - If the policy included both the statement on the left and the statement in question 2, could you terminate an m3.xlarge instance that existed in the account?
 
+<div id='sight'/>
 # AWS QuickSight
 
 This part is about data analysis using AWS QuickSight. All the screenshots and details are in the AWSQuickSight folder of this repository.
