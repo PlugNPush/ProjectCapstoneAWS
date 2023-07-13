@@ -27,20 +27,20 @@ This part is about the deployment of a PHP Website using AWS Cloud9, EC2 and RDS
 
 There are some images inside **iam quizz** and **network quizz** folder. The answers have been checked on the images themselves.
 
-For the IAM Quizz:
-1.png: Option 3
-2.png: Option 1
-3.png: Option 3,4
-4.png: Option 1
-5.png: Option 2
-6.png: Option 3
-7.png: Option 1
+For the IAM Quizz:  
+1.png: **Option 3**  
+2.png: **Option 1**  
+3.png: **Option 3,4**  
+4.png: **Option 1**  
+5.png: **Option 2**  
+6.png: **Option 3**  
+7.png: **Option 1**  
 
-For the Network Quizz:
-1.png: Option 3
-2.png: Option 3
-3.png: Option 1,3,6
-4.png: Option 4
+For the Network Quizz:  
+1.png: **Option 3**  
+2.png: **Option 3**  
+3.png: **Option 1,3,6**  
+4.png: **Option 4**  
 
 <div id='iam'/>
   
