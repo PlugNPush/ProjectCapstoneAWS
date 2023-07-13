@@ -198,6 +198,7 @@ Please evaluate below IAM policies
 - If the policy included both the statement on the left and the statement in question 2, could you terminate an m3.xlarge instance that existed in the account?
 
 <div id='sight'/>
+  
 # AWS QuickSight
 
 This part is about data analysis using AWS QuickSight. All the screenshots and details are in the AWSQuickSight folder of this repository.
