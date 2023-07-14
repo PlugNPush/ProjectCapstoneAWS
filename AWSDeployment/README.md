@@ -6,8 +6,7 @@
 - We [create a route table](Screenshot%202023-07-12%20at%2012.04.58.png) and attach it to the VPC. We edit the route table to add a route to the internet gateway from anywhere (0.0.0.0/0). This will allow the VPC to be reachable via the internet through the internet gateway.
 - We [create a security group](Screenshot%202023-07-12%20at%2012.12.56.png) for the site. We allow the inbound traffic from anywhere on the port 80 (HTTP) and 22 (SSH). We keep allow the outbound traffic to anywhere on any port. This helps to secure the site by only allowing the traffic on the port 80 and 22, to access website and manage the instance remotely.
 - Then we [create a Cloud9 environment](Screenshot%202023-07-12%20at%2012.17.18.png) to develop the site. It is going to create an EC2 instance with the Cloud9 IDE installed. We choose the t2.micro instance type and a Secure Shell (SSH) using the vpc and the public subnet we created earlier. We keep the default settings for the rest of the configuration.
-- We [connect to the Cloud9 IDE](Screenshot%202023-07-12%20at%2012.18.44.png) and install the [PHP module](Screenshot%202023-07-12%20at%2012.21.29.png) and the [mariaDB server](Screenshot%202023-07-12%20at%2012.21.58.png) to be able to run the site.
-...
+- We [connect to the Cloud9 IDE](Screenshot%202023-07-12%20at%2012.18.44.png) and install the [PHP module](Screenshot%202023-07-12%20at%2012.21.29.png) and the [mariaDB server](Screenshot%202023-07-12%20at%2012.21.58.png) to be able to run the site. We could however just install the client of mariadb or mysql, as the server part will not be used since we will be using RDS for that matter.
 
 Here a recap of the commands:
 ```
@@ -31,7 +30,7 @@ sudo chown -R ec2-user:ec2-user /var/www/html
 ![WebSite](Screenshot%202023-07-12%20at%2012.34.49.png)
 - Finally, we need to [create an endpoint](Screenshot%202023-07-12%20at%2013.58.14.png) in the VPC to connect to the EC2 instance remotely. This is an EC2 Instance Connect endpoint with the same security group as the EC2 Instance.
   
-- For the second part, we [create a database](Screenshot%202023-07-12%20at%2012.35.39.png) in the RDS service. We choose the mariadb engine and our EC2 instance. We set the username to "admin" and autogenerate the password. We use the automatic setup that gonna create new private subnet in the VPC and using our security group.
+- For the second part, we [create a database](Screenshot%202023-07-12%20at%2012.35.39.png) in the RDS service. We choose the mariadb engine and to speed up the setup process we indicate that we want to establish a link with our EC2 instance. This automatically chooses the correct VPC and creates 4 self-managed private subnets with 4 availability zones while using our already defined security group. We set the username to "admin" and autogenerate the password. We use the automatic setup.
 - We don't forget to [save the password](Screenshot%202023-07-12%20at%2013.19.38.png) for later.
 - And now we have a [database](Screenshot%202023-07-12%20at%2013.23.52.png), ready to be used.
 - We go back to the Cloud9 IDE and [connect to the database](Screenshot%202023-07-12%20at%2013.28.19.png) using the command line.
