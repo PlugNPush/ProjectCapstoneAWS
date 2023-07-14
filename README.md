@@ -172,7 +172,7 @@ The actions allowed are to create and delete an IAM user. The resource ARNs are 
 - Go to https://docs.aws.amazon.com/IAM/latest/UserGuide/ and in the left navigation expand Reference > Policy Reference > Actions, Resources, and Condition Keys. Choose Identity And Access Management. Scroll to the Actions Defined by Identity And Access Management list.Name at least three specific actions that the **iam:Get\*** action allows.
 
 This policy grants access to IAM service. It allows to retrieve information about IAM users, groups, policies and roles as well as list them, but not to create them.
-The three specific actions that the iam:Get\* action allows are:
+Here are five specific actions that are in the iam:Get\* action allowance:
 - iam:GetUser
 - iam:GetGroup
 - iam:GetPolicy
