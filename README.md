@@ -19,7 +19,7 @@ Table of Contents
 
 # AWS Deployment
 
-This part is about the deployment of a PHP Website using AWS Cloud9, EC2 and RDS on a tailored network infrastructure. All the screenshots and details are in the AWSDeployment folder of this repository.
+This part is about the deployment of a PHP Website using AWS Cloud9, EC2 and RDS on a tailored network infrastructure. All the screenshots and details are in the [AWSDeployment](https://github.com/PlugNPush/ProjectCapstoneAWS/tree/main/AWSDeployment) folder of this repository.
 
 <div id='quizz'/>
 
@@ -224,4 +224,4 @@ If the policy included both statements, you would be able to terminate an m3.xla
   
 # AWS QuickSight
 
-This part is about data analysis using AWS QuickSight. All the screenshots and details are in the AWSQuickSight folder of this repository.
+This part is about data analysis using AWS QuickSight. All the screenshots and details are in the [AWSQuickSight](https://github.com/PlugNPush/ProjectCapstoneAWS/tree/main/AWSQuickSight) folder of this repository.
