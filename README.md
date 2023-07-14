@@ -102,6 +102,9 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 
 ### Question: Under what condition does this policy allow access to VPC-related information? Which AWS region is specified?
 
+The condition states that access is allowed to VPC-related information if the region is us-west-2.
+The AWS region specified is us-west-2.
+
 ```json
 {
   "Version": "2012-10-17",
@@ -126,6 +129,9 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 
 ### Question: What actions are allowed on the "example-bucket" and its objects based on this policy? What specific prefixes are specified in the condition?
 
+The actions allowed are to get, put and list objects from the bucket example-bucket.
+The specific prefixes specified in the condition are documents/* and images/*.
+
 ```json
 {
   "Version": "2012-10-17",
@@ -148,6 +154,9 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 
 ### Question: What actions are allowed for IAM users based on this policy? How are the resource ARNs constructed?
 
+The actions allowed are to create and delete an IAM user.
+The resource ARNs are constructed with the account ID and the username.
+
 ```json
 {
   "Version": "2012-10-17",
@@ -164,6 +173,13 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 - Which AWS service does this policy grant you access to?
 - Does it allow you to create an IAM user, group, policy, or role?
 - Go to https://docs.aws.amazon.com/IAM/latest/UserGuide/ and in the left navigation expand Reference > Policy Reference > Actions, Resources, and Condition Keys. Choose Identity And Access Management. Scroll to the Actions Defined by Identity And Access Management list.Name at least three specific actions that the **iam:Get\*** action allows.
+
+This policy grants access to IAM service.
+It allows to retrieve information about IAM users, groups, policies and roles, but not to create them.
+The three specific actions that the iam:Get\* action allows are:
+- iam:GetUser
+- iam:GetGroup
+- iam:GetPolicy
 
 ```json
 {
@@ -186,6 +202,11 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 ### Questions:
 
 - What actions does the policy allow?
+
+The policy allows to run and start instances of type t2.micro and t2.small.
+It denies the action for all other instance types.
+
+
 - Say that the policy included an additional statement object, like this **example:**
 
 ```json
@@ -197,6 +218,9 @@ The specific resources of EC2 is the instance itself from us-east-1 region and t
 
 - How would the policy restrict the access granted to you by this additional statement?
 - If the policy included both the statement on the left and the statement in question 2, could you terminate an m3.xlarge instance that existed in the account?
+
+The policy would restrict the access granted by the additional statement to the ec2 service. It would allow all actions on ec2 instances.
+If the policy included both statements, you could not terminate an m3.xlarge instance that existed in the account because the first statement would deny the action.
 
 <div id='sight'/>
   
