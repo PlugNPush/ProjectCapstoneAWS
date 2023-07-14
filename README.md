@@ -219,8 +219,8 @@ It denies the action for all other instance types.
 - How would the policy restrict the access granted to you by this additional statement?
 - If the policy included both the statement on the left and the statement in question 2, could you terminate an m3.xlarge instance that existed in the account?
 
-The policy would restrict the access granted by the additional statement to the ec2 service. It would allow all actions on ec2 instances.
-If the policy included both statements, you could not terminate an m3.xlarge instance that existed in the account because the first statement would deny the action.
+It would allow all actions on ec2 instances.
+If the policy included both statements, you could not terminate an m3.xlarge instance that existed in the account because the first statement would deny the action. The second statement would allow all actions on ec2 instances, but the first statement would deny the action for all instance types that are not t2.micro or t2.small.
 
 <div id='sight'/>
   
