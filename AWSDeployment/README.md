@@ -34,7 +34,6 @@ sudo chown -R ec2-user:ec2-user /var/www/html
 - We don't forget to [save the password](Screenshot%202023-07-12%20at%2013.19.38.png) for later.
 - And now we have a [database](Screenshot%202023-07-12%20at%2013.23.52.png), ready to be used.
 - We go back to the Cloud9 IDE and [connect to the database](Screenshot%202023-07-12%20at%2013.28.19.png) using the command line.
-? Screenshot 2023-07-12 at 13.29.35.png
 - We [transfer the database](Screenshot%202023-07-12%20at%2013.29.35.png) from the sql file to the database using the command line. Then we can [see the content](Screenshot%202023-07-12%20at%2013.30.36.png) of the database.
 - We [create parameters](Screenshot%202023-07-12%20at%2013.37.26.png) in the parameter store to store the database endpoint and name, the username and the password. We use the same database name as the one in the code to make it easier to use: "country_schema".
 - Then in IAM, we [create a policy](Screenshot%202023-07-12%20at%2014.14.06.png) to allow the EC2 instance to connect to the database. ...
