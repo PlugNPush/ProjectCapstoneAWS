@@ -152,7 +152,7 @@ The actions allowed are to get, put and list objects from the bucket example-buc
 
 ### Question: What actions are allowed for IAM users based on this policy? How are the resource ARNs constructed?
 
-The actions allowed are to create and delete an IAM user. The resource ARNs are constructed with the AWS account ID and the username. ${aws:username} is a computed value that allows to allow the policies only for the current requesting user. However, it slightly different from using * because not all AWS users have a username: only IAM users have ones, effectively excluding federated users, assumed roles, EC2 instances roles and anonymous callers such as Amazon S3 from the policy. Note: the use of the computed value ${aws:username} is valid only because we used a version of the AWS policy file that is compatible with computed values ("2012-10-17"). The AllowIAMUserCreation policy does not make much sense because in order to be included in the ressource, the user that is being created would need to already exist, however the AllowIAMUserDeletion makes sense as it allows the user to delete his own account.
+The actions allowed are to create and delete an IAM user. The resource ARNs are constructed with the AWS account ID and the username. ${aws:username} is a computed value that allows to dynamically fetch the current requesting user IAM username and to allow the policies specifically for him. However, it slightly different from using * because not all AWS users have a username: only IAM users have ones, effectively excluding federated users, assumed roles, EC2 instances roles and anonymous callers such as Amazon S3 from the policy. Note: the use of the computed value ${aws:username} is valid only because we used a version of the AWS policy file that is compatible with computed values ("2012-10-17"). The AllowIAMUserCreation policy does not make much sense because in order to be included in the ressource, the user that is being created would need to already exist, however the AllowIAMUserDeletion makes sense as it allows the user to delete his own account.
 
 ```json
 {
@@ -218,7 +218,7 @@ It does not specify any allowance, so by default it will allow these actions for
 - If the policy included both the statement on the left and the statement in question 2, could you terminate an m3.xlarge instance that existed in the account?
 
 It would allow all actions on all EC2 instances and properties, therefore it will not restrict any access using EC2.
-If the policy included both statements, you would be able to terminate an m3.xlarge instance that existed in the account because the m3.xlarge is not a condition in the deny statement, and the deny statement does not affect terminating. Therefore, as the first statement being evaluated first to deny running and starting instances for t2.micro or t2.small instances, it would fallback to the second statement which allows all actions on all ec2 instances, succeeding to terminate an m3.xlarge instance that existed in the account.
+If the policy included both statements, you would be able to terminate an m3.xlarge instance that existed in the account because the m3.xlarge is not a condition in the deny statement, and the deny statement does not affect terminating. Therefore, as the first statement being evaluated denies running and starting t2.micro or t2.small instances, it would fallback to the second statement which allows all actions on all ec2 instances, succeeding to terminate an m3.xlarge instance that existed in the account.
 
 <div id='sight'/>
   
