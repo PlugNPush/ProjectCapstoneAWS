@@ -29,7 +29,7 @@ sudo chown -R ec2-user:ec2-user /var/www/html
 - From here, we make some changes like the [security group on the instance](Screenshot%202023-07-12%20at%2012.33.00.png) we forgot to give earlier. We decide to add the one we created earlier without removing the default one.
 - Now we can [access to the site](Screenshot%202023-07-12%20at%2012.34.29.png) by clicking "open address", and tadam!
 ![WebSite](Screenshot%202023-07-12%20at%2012.34.49.png)
-- We define a parameter endpoint, so we need to [create a endpoint](Screenshot%202023-07-12%20at%2013.58.14.png) in the VPC to connect to the EC2 instance. This is an EC2 Instance Connect endpoint with the same security group as the EC2 Instance.
+- Finally, we need to [create an endpoint](Screenshot%202023-07-12%20at%2013.58.14.png) in the VPC to connect to the EC2 instance remotely. This is an EC2 Instance Connect endpoint with the same security group as the EC2 Instance.
   
 - For the second part, we [create a database](Screenshot%202023-07-12%20at%2012.35.39.png) in the RDS service. We choose the mariadb engine and our EC2 instance. We set the username to "admin" and autogenerate the password. We use the automatic setup that gonna create new private subnet in the VPC and using our security group.
 - We don't forget to [save the password](Screenshot%202023-07-12%20at%2013.19.38.png) for later.
